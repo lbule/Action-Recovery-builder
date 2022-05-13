@@ -6,31 +6,31 @@ on:
       LIBRARY_NAME:
         description: 'LIBRARY_NAME'
         required: true
-        default: 'omni'
+        default: 'aosp'
       LIBRARY_URL:
         description: 'LIBRARY_URL'
         required: true
-        default: 'git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git'
+        default: 'git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.gi'
       LIBRARY_BRANCH:
         description: 'LIBRARY_BRANCH'
         required: true
-        default: 'twrp-9.0'
+        default: 'twrp-11'
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/azwhikaru/twrp_device_xiaomi_archytas'
+        default: 'https://github.com/lbule/android_device_tosot_g7_twrp'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
-        default: 'twrp-9.0'
+        default: 'main'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/xiaomi/Archytas'
+        default: 'device/tosot/g7'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'Archytas'
+        default: 'g7'
 
 jobs:
   build:

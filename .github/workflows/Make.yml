@@ -10,7 +10,7 @@ on:
       LIBRARY_URL:
         description: 'LIBRARY_URL'
         required: true
-        default: 'git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
+        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
       LIBRARY_BRANCH:
         description: 'LIBRARY_BRANCH'
         required: true
@@ -18,7 +18,7 @@ on:
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/lbule/android_device_tosot_g7_twrp'
+        default: 'https://github.com/lbule/android_device_tosot_g7_twrp.git'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true

@@ -38,9 +38,6 @@ jobs:
     runs-on: ubuntu-18.04
     
     steps:
-    - name: "Cleanup Environment"
-      uses: rokibhasansagar/slimhub_actions@main
-    
     - name: Check Out
       uses: actions/checkout@main
       
@@ -74,8 +71,8 @@ jobs:
         mkdir workspace
         cd workspace
         echo "::set-output name=pwd::$(pwd)"
-        git config --global user.name "Bule"
-        git config --global user.email "lbule@foxmail.com"
+        git config --global user.name "Hikaru's Action-Build-Bot"
+        git config --global user.email "Android@teio.tk"
         repo init --depth=1 -u ${{ github.event.inputs.LIBRARY_URL }} -b ${{ github.event.inputs.LIBRARY_BRANCH }}
       id: pwd
           
@@ -101,13 +98,7 @@ jobs:
         lunch ${{ github.event.inputs.LIBRARY_NAME }}_${{ github.event.inputs.DEVICE_NAME }}-eng 
         make clean
         make recoveryimage -j$(nproc --all)        
-
-     - name: Upload firmware directory
-        uses: actions/upload-artifact@main
-        with:
-          name: twrp
-          path: workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
- 
+      
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:

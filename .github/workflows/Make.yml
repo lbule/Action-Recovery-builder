@@ -105,8 +105,8 @@ jobs:
      - name: Upload a Build Artifact
        uses: actions/upload-artifact@v3.0.0
        with:
-       name: twrp
-       path: workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
+         name: twrp
+         path: workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v1

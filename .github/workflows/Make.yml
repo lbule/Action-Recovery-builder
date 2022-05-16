@@ -101,13 +101,6 @@ jobs:
         lunch ${{ github.event.inputs.LIBRARY_NAME }}_${{ github.event.inputs.DEVICE_NAME }}-eng 
         make clean
         make recoveryimage -j$(nproc --all)        
-  
-       - name: upload
-         uses: actions/upload-artifact@v3
-         with:
-            name: Recovery
-            path: workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
-            retention-days: 5        
         
     - name: Upload to Release
       uses: softprops/action-gh-release@v1

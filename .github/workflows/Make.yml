@@ -38,17 +38,20 @@ jobs:
     runs-on: ubuntu-18.04
     
     steps:
-    - name: Maximize build space
+    - name: Maximize Build Space
       uses: easimon/maximize-build-space@master
       with:
-        root-reserve-mb: 512
-        swap-size-mb: 1024
+        root-reserve-mb: 5120
+        swap-size-mb: 512
         remove-dotnet: 'true'
+        remove-android: 'true'
     - name: Check Out
       uses: actions/checkout@main
       
     - name: Prepare the environment
       run: |
+        echo "Free space:"
+        df -h
         docker rmi `docker images -q`
         sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/sudo apt/sources.list.d
         sudo apt -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*

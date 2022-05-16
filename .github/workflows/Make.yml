@@ -38,9 +38,6 @@ jobs:
     runs-on: ubuntu-18.04
     
     steps:
-    - name: "Cleanup Environment"
-      uses: rokibhasansagar/slimhub_actions@main
-      
     - name: Check Out
       uses: actions/checkout@main
       
